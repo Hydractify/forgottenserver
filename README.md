@@ -1,3 +1,32 @@
+<div>
+    <p>
+        <a href="https://www.hydractify.org">
+            <img src="https://www.hydractify.org/logo.png" />
+        </a>
+    </p>
+    <p align="center">
+        <a href="https://www.hydractify.org/discord">
+            <img src="https://img.shields.io/discord/298969150133370880.svg?style=flat-square&logo=discord">
+        </a>
+        <a href="https://www.hydractify.org/patreon">
+            <img src="https://img.shields.io/badge/Patreon-support!-fa6956.svg?style=flat-square&logo=patreon" />
+        </a>
+        <a href="https://twitter.com/hydractify">
+            <img src="https://img.shields.io/twitter/follow/hydractify.svg?style=social&logo=twitter">
+        </a>
+        <br />
+        <a href="https://github.com/Hydractify/kanna_kobayashi/issues">
+            <img src="https://img.shields.io/github/issues/Hydractify/forgottenserver.svg?style=flat-square">
+        </a>
+        <a href="https://github.com/Hydractify/kanna_kobayashi/graphs/contributors">
+            <img src="https://img.shields.io/github/contributors/Hydractify/forgottenserver.svg?style=flat-square">
+        </a>
+        <a href="https://github.com/Hydractify/kanna_kobayashi/blob/stable/LICENSE">
+            <img src="https://img.shields.io/github/license/Hydractify/forgottenserver.svg?style=flat-square">
+        </a>
+    </p>
+</div>
+
 # forgottenserver
 Repository for maintaing our custom open tibia server using forgottenserver.
 
