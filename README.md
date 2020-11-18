@@ -1,7 +1,7 @@
 <div>
-    <p>
+    <p align="center">
         <a href="https://www.hydractify.org">
-            <img src="https://www.hydractify.org/logo.png" />
+            <img src="https://www.hydractify.org/logo.png" height="250px" />
         </a>
     </p>
     <p align="center">
