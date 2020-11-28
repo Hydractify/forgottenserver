@@ -17,7 +17,7 @@ npcHandler:addModule(VoiceModule:new(voices))
 
 -- Basic Keywords
 keywordHandler:addAliasKeyword(
-	{"tools"}
+	{"tools"},
 	StdModule.say,
 	{
 		npcHandler = npcHandler,
@@ -25,7 +25,7 @@ keywordHandler:addAliasKeyword(
 	})
 
 keywordHandler:addAliasKeyword(
-	{"offer"}
+	{"offer"},
 	StdModule.say,
 	{
 		npcHandler = npcHandler,
@@ -33,7 +33,7 @@ keywordHandler:addAliasKeyword(
 	})
 
 keywordHandler:addAliasKeyword(
-	{"trade"}
+	{"trade"},
 	StdModule.say,
 	{
 		npcHandler = npcHandler,
@@ -41,7 +41,7 @@ keywordHandler:addAliasKeyword(
 	})
 
 keywordHandler:addAliasKeyword(
-	{"gold"}
+	{"gold"},
 	StdModule.say,
 	{
 		npcHandler = npcHandler,
@@ -49,15 +49,7 @@ keywordHandler:addAliasKeyword(
 	})
 
 keywordHandler:addAliasKeyword(
-	{"money"}
-	StdModule.say,
-	{
-		npcHandler = npcHandler,
-		text = "Well, no gold, no deal. Earn gold by fighting {monsters} and picking up the things they carry. Sell it to merchants to make profit!"
-	})
-
-keywordHandler:addAliasKeyword(
-	{"money"}
+	{"money"},
 	StdModule.say,
 	{
 		npcHandler = npcHandler,
