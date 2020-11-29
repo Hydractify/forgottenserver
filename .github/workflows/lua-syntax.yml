@@ -1,4 +1,4 @@
-name: Lua syntax check
+name: Lua Syntax Check
 
 on:
   pull_request:
@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: leafo/gh-actions-lua@v5
+      - uses: leafo/gh-actions-lua@master
 
-      - name: Test Lua syntax
+      - name: Test Lua Syntax
         run: find data/ -name '*.lua' -print0 | xargs -0 -n1 luac -p

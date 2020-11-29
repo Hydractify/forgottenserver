@@ -1,7 +1,11 @@
+# Set ownership of .github to @wizardlink
+# This is done to make sure that changes done to it are filtered by an organization administrator
+.github/			@wizardlink
+
 # Set ownership of the NPC files to @wizardlink
 # They own this directory since they are the ones leading it's development
-data/npc/*			@wizardlink
+data/npc/			@wizardlink
 
 # Set ownership of the monster files to @Legocro
 # They own this directory since they are the ones leading it's development
-data/monster/*		@Legocro
+data/monster/		@Legocro
