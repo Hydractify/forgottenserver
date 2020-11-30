@@ -1,0 +1,9 @@
+<npc name="Obi" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="131" head="19" body="63" legs="96" feet="38" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="Axe,2386,20;Dagger,2379,5;Hand Axe,2380,8;Rapier,2384,15;Sabre,2385,25;Scythe,2550,12;Short Sword,2406,30;Sickle,2405,8;Spear,2389,10;" />
+		<parameter key="shop_sellable" value="Axe,2386,7;Bone Club,2449,5;Dagger,2379,2;Hand Axe,2380,4;Hatchet,2388,25;Katana,2412,35;Mace,2398,30;Machete,2420,6;Rapier,2384,5;Sabre,2385,12;Scythe,2550,3;Short Sword,2406,10;Sickle,2405,2;Spear,2389,3;Sword,2376,25;" />
+	</parameters>
+</npc>

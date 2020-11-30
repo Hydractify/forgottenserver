@@ -1,0 +1,9 @@
+<npc name="Willie" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="153" head="77" body="63" legs="58" feet="115" addons="1" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="Bread,2689,3;Cheese,2696,5;Ham,2671,8;Meat,2666,5" />
+		<parameter key="shop_sellable" value="Bread,2689,1;Cheese,2696,2;Ham,2671,4;Meat,2666,2;Carrot,2684,1;Cherry,2679,1;Egg,2328,1;Salmon,2668,2" />
+	</parameters>
+</npc>

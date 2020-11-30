@@ -1,0 +1,4 @@
+<npc name="Vascalir" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="131" head="96" body="121" legs="79" feet="116" addons="0" />
+</npc>

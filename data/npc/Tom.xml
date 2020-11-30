@@ -1,0 +1,8 @@
+<npc name="Tom" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="144" head="113" body="115" legs="58" feet="115" addons="1" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="Bear Paw,5896,10;Dead Rabbit,2992,2;Dead Rat,2813,2;Dead Wolf,2826,5;Minotaur Leather,5878,12;Wolf Paw,5897,7" />
+	</parameters>
+</npc>

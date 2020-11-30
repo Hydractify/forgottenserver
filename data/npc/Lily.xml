@@ -1,0 +1,9 @@
+<npc name="Lily" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="138" head="78" body="101" legs="86" feet="115" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="Antidote Potion,8474,50;Small Health Potion,8704,20;" />
+		<parameter key="shop_sellable" value="Cookie,8111,1;Empty Potion Flask,7636,5;Vial,2006,5;" />
+	</parameters>
+</npc>
