@@ -8,7 +8,7 @@
 		<parameter key="message_sendtrade" value="Take a look in the trade window to your left." />
 
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="backpack,1988,10;bag,1987,5;fishing rod,2580,150;rope,2120,50;scroll,1949,5;scythe,2550,12;shovel,2554,10;torch,2050,2;worm,3976,1" />
-		<parameter key="shop_sellable" value="fishing rod,2580,30;rope,2120,8;shovel,2554,2" />
+		<parameter key="shop_buyable" value="Backpack,1988,10;Bag,1987,4;Fishing Rod,2580,150;Rope,2120,50;Scroll,1949,5;Scythe,2550,12;Shovel,2554,10;Torch,2050,2;Worm,3976,1" />
+		<parameter key="shop_sellable" value="Fishing Rod,2580,30;Rope,2120,8;Shovel,2554,2" />
 	</parameters>
 </npc>
