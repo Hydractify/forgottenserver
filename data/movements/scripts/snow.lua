@@ -8,7 +8,11 @@ function onStepOut(creature, item, position, fromPosition)
 	else
 		item:transform(item.itemid + 15)
 	end
-	creature:addAchievementProgress("Snowbunny", 10000)
+
+	if creature:isPlayer() then
+		creature:addAchievementProgress("Snowbunny", 10000)
+	end
+
 	item:decay()
 	return true
 end
