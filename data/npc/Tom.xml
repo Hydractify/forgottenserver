@@ -1,4 +1,4 @@
-<npc name="Tom" walkinterval="2000" floorchange="0">
+<npc name="Tom" script="Tom.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="144" head="113" body="115" legs="58" feet="115" addons="1" />
 	<parameters>

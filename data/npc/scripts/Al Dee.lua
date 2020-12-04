@@ -506,7 +506,12 @@ keywordHandler:addKeyword(
 
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
-		return false
+		if msgcontains(msg, "charach") then
+			selfSay("Ikem Charach maruk.")
+			npcHandler:addFocus(cid)
+		else
+			return false
+		end
 	end
 
 	if msgcontains(msg, "pick") or msgcontains(msg, "small.*axe") then

@@ -1,4 +1,4 @@
-<npc name="Billy" walkinterval="2000" floorchange="0">
+<npc name="Billy" script="Billy.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="153" head="78" body="63" legs="58" feet="115" addons="1" />
 	<parameters>
