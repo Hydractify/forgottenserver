@@ -525,7 +525,7 @@ salmonKeyword:addChildKeyword(
 )
 
 salmonKeyword:addChildKeyword(
-	{"yes"}, D
+	{"yes"},
 	StdModule.say,
 	{
 		npcHandler = npcHandler,
