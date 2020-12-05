@@ -165,6 +165,7 @@ function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
 		return false
 	end
 
+	player:setStorageValue(PlayerStorageKeys.RookgaardTutorialIsland.tutorialHintsStorage, 19)
 	local groundId = ground:getId()
 	if table.contains(holes, groundId) then
 		ground:transform(groundId + 1)
@@ -173,6 +174,7 @@ function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
 		toPosition.z = toPosition.z + 1
 		tile:relocateTo(toPosition)
 		player:addAchievementProgress("The Undertaker", 500)
+
 	elseif target.itemid == 20230 then -- swamp digging
 		if (player:getStorageValue(PlayerStorageKeys.swampDigging)) <= os.time() then
 			local chance = math.random(100)
@@ -189,6 +191,7 @@ function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
 			player:setStorageValue(PlayerStorageKeys.swampDigging, os.time() + 7 * 24 * 60 * 60)
 			player:getPosition():sendMagicEffect(CONST_ME_GREEN_RINGS)
 		end
+
 	elseif table.contains(sandIds, groundId) then
 		local randomValue = math.random(1, 100)
 		if target.actionid == actionIds.sandHole and randomValue <= 20 then
@@ -201,6 +204,16 @@ function onUseShovel(player, item, fromPosition, target, toPosition, isHotkey)
 			Game.createMonster("Scarab", toPosition)
 		end
 		toPosition:sendMagicEffect(CONST_ME_POFF)
+
+	-- RookgaardTutorialIsland
+	elseif groundId == 8579 and player:getStorageValue(PlayerStorageKeys.RookgaardTutorialIsland.tutorialHintsStorage) < 20 then
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You dug a hole! Walk onto it as long as it is open to jump down into the forest cave.")
+		player:setStorageValue(PlayerStorageKeys.RookgaardTutorialIsland.tutorialHintsStorage, 19)
+		Position(32070, 32266, 7):sendMagicEffect(CONST_ME_TUTORIALARROW)
+		Position(32070, 32266, 7):sendMagicEffect(CONST_ME_TUTORIALSQUARE)
+		ground:transform(469)
+		ground:decay()
+
 	else
 		return false
 	end
