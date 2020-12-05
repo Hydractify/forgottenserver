@@ -47,7 +47,10 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 			tile:relocateTo(config.relocatePosition, true, config.relocateMonsterPosition)
 			tile:getGround():transform(bridge.groundId)
-			Game.createItem(bridge.itemId, 1, bridge.position)
+
+			if bridge.itemId ~= nil then
+				Game.createItem(bridge.itemId, 1, bridge.position)
+			end
 		end
 
 	end
