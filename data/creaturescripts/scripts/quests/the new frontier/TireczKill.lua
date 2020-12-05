@@ -14,12 +14,11 @@ local function clearArena()
 end
 
 function onKill(creature, target)
-	local targetMonster = target:getMonster()
-	if not targetMonster then
+	if not target:isMonster() then
 		return true
 	end
 
-	if targetMonster:getName():lower() ~= 'tirecz' then
+	if target:getName():lower() ~= 'tirecz' then
 		return true
 	end
 

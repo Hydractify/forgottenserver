@@ -1,6 +1,5 @@
 function onKill(creature, target)
-	local targetMonster = target:getMonster()
-	if not targetMonster then
+	if not target:isMonster() then
 		return
 	end
 
@@ -15,7 +14,7 @@ function onKill(creature, target)
 		return
 	end
 
-	if not isInArray(ARENA[arena].creatures, targetMonster:getName():lower()) then
+	if not isInArray(ARENA[arena].creatures, target:getName():lower()) then
 		return
 	end
 

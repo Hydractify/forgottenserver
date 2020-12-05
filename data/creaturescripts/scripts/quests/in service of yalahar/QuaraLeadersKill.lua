@@ -5,12 +5,11 @@ local quaraLeaders = {
 }
 
 function onKill(creature, target)
-	local targetMonster = target:getMonster()
-	if not targetMonster then
+	if not target:isMonster() then
 		return true
 	end
 
-	local bossStorage = quaraLeaders[targetMonster:getName():lower()]
+	local bossStorage = quaraLeaders[target:getName():lower()]
 	if not bossStorage then
 		return true
 	end
@@ -18,7 +17,7 @@ function onKill(creature, target)
 	local player = creature:getPlayer()
 	if player:getStorageValue(bossStorage) < 1 then
 		player:setStorageValue(bossStorage, 1)
-		player:say('You slayed ' .. targetMonster:getName() .. '.', TALKTYPE_MONSTER_SAY)
+		player:say('You slayed ' .. target:getName() .. '.', TALKTYPE_MONSTER_SAY)
 		player:setStorageValue(PlayerStorageKeys.InServiceofYalahar.QuaraState, 2)
 		player:setStorageValue(PlayerStorageKeys.InServiceofYalahar.Questline, 41)
 		-- StorageValue for Questlog 'Mission 07: A Fishy Mission'

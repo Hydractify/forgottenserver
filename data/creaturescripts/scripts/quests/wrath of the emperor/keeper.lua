@@ -1,10 +1,9 @@
 function onKill(creature, target)
-	local targetMonster = target:getMonster()
-	if not targetMonster then
+	if not target:isMonster() then
 		return true
 	end
 
-	if targetMonster:getName():lower() == 'the keeper' then
+	if target:getName():lower() == 'the keeper' then
 		Game.setStorageValue(PlayerStorageKeys.WrathoftheEmperor.Mission03, 0)
 	end
 	return true

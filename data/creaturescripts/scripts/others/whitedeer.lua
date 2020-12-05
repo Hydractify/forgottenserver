@@ -5,18 +5,17 @@ local config = {
 }
 
 function onDeath(creature, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
-	local targetMonster = creature:getMonster()
-	if not targetMonster or targetMonster:getMaster() then
+	if not target:isMonster() or target:getMaster() then
 		return true
 	end
 
 	local chance = math.random(100)
 	for i = 1, #config do
 		if chance <= config[i].chance then
-			local spawnMonster = Game.createMonster(config[i].monster, targetMonster:getPosition(), true, true)
+			local spawnMonster = Game.createMonster(config[i].monster, target:getPosition(), true, true)
 			if spawnMonster then
 				spawnMonster:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-				targetMonster:say(config[i].message, TALKTYPE_MONSTER_SAY)
+				target:say(config[i].message, TALKTYPE_MONSTER_SAY)
 			end
 			break
 		end

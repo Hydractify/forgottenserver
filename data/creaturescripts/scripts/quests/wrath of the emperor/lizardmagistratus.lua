@@ -1,10 +1,9 @@
 function onKill(creature, target)
-	local targetMonster = target:getMonster()
-	if not targetMonster then
+	if not target:isMonster() then
 		return true
 	end
 
-	if targetMonster:getName():lower() ~= 'lizard magistratus' then
+	if target:getName():lower() ~= 'lizard magistratus' then
 		return true
 	end
 

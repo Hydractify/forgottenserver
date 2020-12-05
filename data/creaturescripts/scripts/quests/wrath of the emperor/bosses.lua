@@ -6,12 +6,11 @@ local bosses = {
 }
 
 function onKill(creature, target)
-	local targetMonster = target:getMonster()
-	if not targetMonster then
+	if not target:isMonster() then
 		return true
 	end
 
-	local bossConfig = bosses[targetMonster:getName():lower()]
+	local bossConfig = bosses[target:getName():lower()]
 	if not bossConfig then
 		return true
 	end

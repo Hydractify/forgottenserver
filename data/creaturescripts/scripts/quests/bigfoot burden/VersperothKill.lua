@@ -25,12 +25,11 @@ local function clearArena()
 end
 
 function onKill(creature, target)
-	local targetMonster = target:getMonster()
-	if not targetMonster then
+	if not target:isMonster() then
 		return true
 	end
 
-	if targetMonster:getName():lower() ~= 'versperoth' then
+	if target:getName():lower() ~= 'versperoth' then
 		return true
 	end
 

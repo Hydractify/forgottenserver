@@ -14,22 +14,21 @@ local bossForms = {
 }
 
 function onKill(player, target)
-	local targetMonster = target:getMonster()
-	if not targetMonster then
+	if not target:isMonster() then
 		return true
 	end
 
-	if targetMonster:getName():lower() == 'mutated zalamon' then
+	if target:getName():lower() == 'mutated zalamon' then
 		Game.setStorageValue(PlayerStorageKeys.WrathoftheEmperor.Mission11, -1)
 		return true
 	end
 
-	local bossConfig  = bossForms[targetMonster:getName():lower()]
+	local bossConfig  = bossForms[target:getName():lower()]
 	if not bossConfig then
 		return true
 	end
 
-	Game.createMonster(bossConfig.newForm, targetMonster:getPosition(), false, true)
+	Game.createMonster(bossConfig.newForm, target:getPosition(), false, true)
 	player:say(bossConfig.text, TALKTYPE_MONSTER_SAY)
 	return true
 end

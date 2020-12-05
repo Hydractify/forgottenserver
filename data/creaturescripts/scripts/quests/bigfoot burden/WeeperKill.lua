@@ -31,16 +31,15 @@ end
 -- This script is unfinished after conversion, but I doubt that it was working as intended before
 -- 'last' can never be true
 function onKill(creature, target)
-	local targetMonster = target:getMonster()
-	if not targetMonster then
+	if not target:isMonster() then
 		return true
 	end
 
-	if targetMonster:getName():lower() ~= 'parasite' or Game.getStorageValue(GlobalStorageKeys.Weeper) >= 1 then
+	if target:getName():lower() ~= 'parasite' or Game.getStorageValue(GlobalStorageKeys.Weeper) >= 1 then
 		return true
 	end
 
-	local targetPosition = targetMonster:getPosition()
+	local targetPosition = target:getPosition()
 	local barrier = false
 	for i = 1, #positions do
 		if targetPosition == positions[i] then

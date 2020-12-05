@@ -5,17 +5,16 @@ local bosses = {
 }
 
 function onKill(creature, target)
-	local targetMonster = target:getMonster()
-	if not targetMonster then
+	if not target:isMonster() then
 		return true
 	end
 
-	local bossConfig = bosses[targetMonster:getName():lower()]
+	local bossConfig = bosses[target:getName():lower()]
 	if not bossConfig then
 		return true
 	end
 
-	for pid, _ in pairs(targetMonster:getDamageMap()) do
+	for pid, _ in pairs(target:getDamageMap()) do
 		local attackerPlayer = Player(pid)
 		if attackerPlayer then
 			if attackerPlayer:getStorageValue(PlayerStorageKeys.BigfootBurden.WarzoneStatus) < bossConfig.status then

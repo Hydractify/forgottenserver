@@ -1432,13 +1432,13 @@
 	<movevent event="StepOut" actionid="60000" script="allowMovement.lua" />
 
 	<!-- Rookgaard -->
-	<movevent event="StepIn" fromaid="50058" toaid = "50069" script="rookgaard/rookgaard tutorial island/tutorialTiles.lua" />
-	<movevent event="StepIn" fromaid="50075" toaid = "50079" script="rookgaard/rookgaard tutorial island/tutorialTiles.lua" />
-	<movevent event="StepIn" actionid="50081" script="rookgaard/rookgaard tutorial island/tutorialTiles.lua" />
-	<movevent event="StepIn" fromaid="50070" toaid = "50074" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua" />
-	<movevent event="StepIn" itemid="8596" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua" />
-	<movevent event="StepIn" actionid="50080" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua" />
-	<movevent event="StepIn" fromaid="50088" toaid = "50089" script="rookgaard/rookgaard tutorial island/tutorialStopTiles.lua" />
+	<movevent event="StepIn" fromaid="50058" toaid = "50069" script="rookgaard/tutorial_island/tutorialTiles.lua" />
+	<movevent event="StepIn" fromaid="50075" toaid = "50079" script="rookgaard/tutorial_island/tutorialTiles.lua" />
+	<movevent event="StepIn" actionid="50081" script="rookgaard/tutorial_island/tutorialTiles.lua" />
+	<movevent event="StepIn" fromaid="50070" toaid = "50074" script="rookgaard/tutorial_island/tutorialStopTiles.lua" />
+	<movevent event="StepIn" itemid="8596" script="rookgaard/tutorial_island/tutorialStopTiles.lua" />
+	<movevent event="StepIn" actionid="50080" script="rookgaard/tutorial_island/tutorialStopTiles.lua" />
+	<movevent event="StepIn" fromaid="50088" toaid = "50089" script="rookgaard/tutorial_island/tutorialStopTiles.lua" />
 	<movevent event="StepIn" actionid="50241" script="rookgaard/premiumbridge.lua" />
 	<movevent event="StepIn" actionid="50240" script="rookgaard/levelbridge.lua" />
 	<movevent event="StepIn" fromaid="5635" toaid="5636" script="rookgaard/sword_of_fury.lua" />

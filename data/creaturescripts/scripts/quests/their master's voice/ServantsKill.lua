@@ -62,12 +62,11 @@ local function summonServant(position)
 end
 
 function onKill(creature, target)
-	local targetMonster = target:getMonster()
-	if not targetMonster then
+	if not target:isMonster() then
 		return true
 	end
 
-	if not isInArray(servants, targetMonster:getName():lower()) then
+	if not isInArray(servants, target:getName():lower()) then
 		return true
 	end
 
@@ -85,7 +84,7 @@ function onKill(creature, target)
 
 	elseif killedAmount == #positions and wave == 25 then
 		Game.createMonster('mad mage', magePositions[math.random(#magePositions)])
-		targetMonster:say('The Mad Mage has been spawned!', TALKTYPE_MONSTER_SAY)
+		target:say('The Mad Mage has been spawned!', TALKTYPE_MONSTER_SAY)
 		fillFungus({x = 33306, y = 31847}, {x = 33369, y = 31919})
 	end
 	return true

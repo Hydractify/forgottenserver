@@ -9,12 +9,11 @@ local bosses = {
 }
 
 function onKill(player, target)
-	local targetMonster = target:getMonster()
-	if not targetMonster then
+	if not target:isMonster() then
 		return true
 	end
 
-	local targetName = targetMonster:getName():lower()
+	local targetName = target:getName():lower()
 	local bossStorage = bosses[targetName]
 	if not bossStorage then
 		return true
