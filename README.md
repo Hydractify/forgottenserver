@@ -53,8 +53,6 @@ After you set up the user and granted permission to the database, you can run th
 
 Copy the `config.lua.dist` and name it `config.lua`, there you want to change the `mysqlUser` to whatever you named the MySql user, `mysqlPass` for it's password (if there is any) and change `mysqlDatabase` to whatever you named the database.
 
-You also want to make sure that you have decompressed the `map.rar` file that comes inside `data/world`, otherwise the server will not find a map. If you have not cloned with the `submodule` flag, you can get the map files in [orts/world].
-
 Once you are done with that, all you have to do is run the `tfs` that you compiled! Have fun. :)
 
 ### Documentation
@@ -63,7 +61,7 @@ Use this link as reference for everything related to the open tibia server:
 
 - [forgottenserver]
 
-You will be able to find the world that we are using as well as the server we are basing ourselves off of in these links:
+You will be able to find the world and datapack we used as base in these links:
 
 - [orts/world]
 - [orts/server]
