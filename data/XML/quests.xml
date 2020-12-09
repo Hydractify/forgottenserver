@@ -1334,4 +1334,9 @@
 			<missionstate id="1" description="You completed this Quest!" />
 		</mission>
 	</quest>
+	<quest name="Child of Destiny" startstorageid="13000" startstoragevalue="1">
+		<mission name="Child of Destiny" storageid="13000" startvalue="1" endvalue="11">
+			<missionstate id="1" description="Such wowzer." />
+		</mission>
+	</quest>
 </quests>
