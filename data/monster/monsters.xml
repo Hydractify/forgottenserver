@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monsters>
 	<monster name="a carved stone tile" file="monsters/a_carved_stone_tile.xml" />
-	<monster name="Abyssador" file="monsters/abyssador.xml" />
-	<monster name="Achad" file="monsters/achad.xml" />
+	<monster name="Abyssador" file="monsters/abyssador.xml" /> <monster name="Achad" file="monsters/achad.xml" />
 	<monster name="Acid Blob" file="monsters/acid_blob.xml" />
 	<monster name="Acolyte of the Cult" file="monsters/acolyte_of_the_cult.xml" />
 	<monster name="Adept of the Cult" file="monsters/adept_of_the_cult.xml" />
@@ -448,7 +447,7 @@
 	<monster name="Panda" file="monsters/panda.xml" />
 	<monster name="Parasite" file="monsters/parasite.xml" />
 	<monster name="Parrot" file="monsters/parrot.xml" />
-	<monster name="Party Skeleton" file="monsters/party_skeleton.xml" />
+	<monster name="Party Skeleton" file="monsters/party skeleton.xml" />
 	<monster name="Penguin" file="monsters/penguin.xml" />
 	<monster name="Phantasm Summon" file="monsters/phantasm_summon.xml" />
 	<monster name="Phantasm" file="monsters/phantasm.xml" />
@@ -688,4 +687,11 @@
 	<monster name="Zoralurk" file="monsters/zoralurk.xml" />
 	<monster name="Zugurosh" file="monsters/zugurosh.xml" />
 	<monster name="Zulazza the Corruptor" file="monsters/zulazza_the_corruptor.xml" />
+	<monster name="Glooth Golem" file="monsters/glooth golem.xml" />
+	<monster name="Rift Phantom" file="monsters/rift phantom.xml" />
+	<monster name="Rift Lord" file="monsters/rift lord.xml" />
+	<monster name="Shard Of Corruption" file="monsters/shard of corruption.xml" />
+	<monster name="Minion Of Versperoth" file="monsters/minion of versperoth.xml" />
+	<monster name="Demon Summoner" file="monsters/demon summoner.xml" />
+	<monster name="Glooth Anemone" file="monsters/glooth anemone.xml" />
 </monsters>

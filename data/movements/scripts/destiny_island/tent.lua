@@ -3,9 +3,10 @@ function onStepIn(creature, item, position, fromPosition)
 		return
 	end
 
-	local storage = PlayerStorageKeys.ChildOfDestiny
+	local storage = PlayerStorageKeys.ChildOfDestiny.quest
 
 	if creature:getStorageValue(storage) < 1 then
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Your way is barried. You need to talk to Neill before you can enter.")
+		creature:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Your way is barried. You need to talk to Neill before you can enter.")
+		creature:teleportTo(fromPosition, true)
 	end
 end

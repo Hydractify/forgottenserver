@@ -249,6 +249,9 @@
 	<action actionid="5640" script="rookgaard/honeyflower_quest.lua" />
 	<action actionid="5641" script="rookgaard/banana_quest.lua" />
 
+	<!-- Island of Destiny -->
+	<action actionid="6003" script="island_of_destiny/chests.lua" />
+
 	<!-- Adventurer's Guild -->
 	<action itemid="18559" script="adventurers guild/adventurers_stone.lua" />
 	<action fromid="19598" toid="19599" script="adventurers guild/magicdoor.lua" />

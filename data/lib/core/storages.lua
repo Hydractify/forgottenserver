@@ -956,7 +956,11 @@ PlayerStorageKeys = {
 	combatProtectionStorage = 50722,
 	blockMovementStorage = 100000,
 
-	ChildOfDestiny = 13000
+	ChildOfDestiny = {
+		quest = 13000,
+		shieldChest = 13001,
+		potionChest = 13002
+	}
 }
 
 GlobalStorageKeys = {
