@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Shanoya" script="Shanoya.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="137" />
+	<look type="137" head="78" body="61" legs="117" feet="39" />
+	<parameters>
+		<parameter key="message_greet" value="Hi there, stranger. Come on in and grab a spear! Tylius explains how to fire shots with fancy magic staffs, but they are not truly a distance weapon, oh no. In here, it's the real McCoy! Shall I go on? {Yes}?" />
+	</parameters>
 </npc>
