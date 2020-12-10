@@ -6,7 +6,7 @@
 	<flags>
 		<flag summonable="0" />
 		<flag attackable="1" />
-		<flag hostile="0" />
+		<flag hostile="1" />
 		<flag illusionable="1" />
 		<flag convinceable="0" />
 		<flag pushable="1" />
@@ -20,4 +20,12 @@
 		<attack name="melee" interval="2000" min="0" max="-3" />
 	</attacks>
 	<defenses armor="2" defense="9" />
+	<elements>
+		<element physicalPercent="100" />
+		<element holyPercent="100" />
+		<element firePercent="100" />
+		<element energyPercent="100" />
+		<element icePercent="100" />
+		<element earthPercent="100" />
+	</elements>
 </monster>
