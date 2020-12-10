@@ -959,7 +959,8 @@ PlayerStorageKeys = {
 	ChildOfDestiny = {
 		quest = 13000,
 		shieldChest = 13001,
-		potionChest = 13002
+		potionChest = 13002,
+		meatChest = 13003
 	}
 }
 

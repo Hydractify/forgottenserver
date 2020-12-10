@@ -1,6 +1,7 @@
 local chests = {
 	[55000] = PlayerStorageKeys.ChildOfDestiny.shieldChest,
-	[55001] = PlayerStorageKeys.ChildOfDestiny.potionChest
+	[55001] = PlayerStorageKeys.ChildOfDestiny.potionChest,
+	[55002] = PlayerStorageKeys.ChildOfDestiny.meatChest
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
