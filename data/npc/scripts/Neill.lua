@@ -32,8 +32,8 @@ local function creatureSayCallback(cid, type, msg)
 			"In each tent, a combat trainer will show you his vocation's special fighting technique. So you can find out which vocation suits you best! ...",
 			"Don't worry, it's all for fun, just to show you the principle, and won't hurt. {OK}?"
 		}, cid)
-
 		npcHandler.topic[cid] = 1
+		return false
 	end
 
 	if npcHandler.topic[cid] == 1 then
@@ -47,6 +47,8 @@ local function creatureSayCallback(cid, type, msg)
 		}, cid)
 
 		npcHandler.topic[cid] = 2
+		return false
+
 	end
 
 	if npcHandler.topic[cid] == 2 then
@@ -60,6 +62,8 @@ local function creatureSayCallback(cid, type, msg)
 		}, cid)
 
 		npcHandler.topic[cid] = 3
+		return false
+
 	end
 
 	if npcHandler.topic[cid] == 3 then
@@ -70,6 +74,8 @@ local function creatureSayCallback(cid, type, msg)
 		npcHandler:say("Good! You already fought on Rookgaard, so you probably have a weapon. Or do you need a {sword}?", cid)
 
 		npcHandler.topic[cid] = 4
+		return false
+
 	end
 
 	if npcHandler.topic[cid] == 4 then
@@ -87,6 +93,8 @@ local function creatureSayCallback(cid, type, msg)
 
 		player:setStorageValue(storage, 1)
 		player:addItem(ItemType("mean knight sword"):getId())
+		return false
+
 	end
 
 	return true

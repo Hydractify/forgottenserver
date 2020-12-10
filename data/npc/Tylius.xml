@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Tylius" script="Tylius.lua" walkinterval="2000" floorchange="0">
+<npc name="Tylius" script="Tylius.lua" walkinterval="2000" floorchange="0" speechbubble="1">
 	<health now="100" max="100" />
 	<look type="145" />
+	<parameters>
+		<parameter key="message_greet" value="Hello there! Interested in magic? Wish to become an acolyte of the arcane, a neophyte of nature? Then the staff is your weapon of choice! Care to try it out? Of course you do. Say {yes}." />
+	</parameters>
 </npc>

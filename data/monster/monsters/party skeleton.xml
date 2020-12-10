@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Party Skeleton" nameDescription="a party skeleton" race="undead" experience="0" speed="154" manacost="0">
+<monster name="Party Skeleton" nameDescription="a party skeleton" race="undead" experience="0" speed="154" manacost="0" walkinterval="3000">
 	<health now="40" max="40" />
 	<look type="33" corpse="5972" />
 	<targetchange interval="2000" chance="0" />
 	<flags>
 		<flag summonable="0" />
-		<flag attackable="0" />
+		<flag attackable="1" />
 		<flag hostile="0" />
 		<flag illusionable="1" />
 		<flag convinceable="0" />
