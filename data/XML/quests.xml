@@ -1336,7 +1336,7 @@
 	</quest>
 	<quest name="Child of Destiny" startstorageid="13000" startstoragevalue="1">
 		<mission name="Child of Destiny" storageid="13000" startvalue="1" endvalue="11">
-			<missionstate id="1" description="Such wowzer." />
+			<missionstate id="1" description="Talking to Neil, you learned that the festival of initiates will show you the different vocations' fighting styles in Tibia to help choose your own. Time to check them out!" />
 			<missionstate id="2" description="The sorcerer Tylius showed you how mages use a rod or wand as a weapon. In the next tent, you'll learn which weapons paladins use to hunt in Tibia. Onwards!"/>
 		</mission>
 	</quest>
