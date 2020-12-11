@@ -145,3 +145,24 @@ function StdModule.rookgaardHints(cid, message, keywords, parameters, node)
 	end
 	return true
 end
+
+function NpcHandler:handleTopics(cid, msg, topics)
+	local topic = topics[self.topic[cid]]
+
+	if type(topic) == "function" then
+		return topic(cid, msg)
+	end
+
+	if not isInArray(topic.keywords, msg:lower()) then
+		return false
+	end
+
+	self:say(topic.message, cid)
+	self.topic[cid] = self.topic[cid] + 1
+
+	if type(topic.func) == "function" then
+		topic.func(cid, msg)
+	end
+
+	return true
+end

@@ -90,24 +90,7 @@ local function creatureSayCallback(cid, talkType, msg)
 		return false
 	end
 
-	local topic = topics[npcHandler.topic[cid]]
-
-	if type(topic) == "function" then
-		return topic(cid, msg)
-	end
-
-	if not isInArray(topic.keywords, msg:lower()) then
-		return false
-	end
-
-	npcHandler:say(topic.message, cid)
-	npcHandler.topic[cid] = npcHandler.topic[cid] + 1
-
-	if type(topic.func) == "function" then
-		topic.func(cid, msg)
-	end
-
-	return true
+	return npcHandler:handleTopics(cid, msg, topics)
 end
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 
