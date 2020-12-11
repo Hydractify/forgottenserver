@@ -155,7 +155,7 @@ function NpcHandler:handleTopics(cid, msg, topics)
 
 	if topic[1] ~= nil then
 		for _, obj in pairs(topic) do
-			if isInArray(obj.keywords, msg:lower()) then
+			if string.msgInside(msg:lower(), obj.keywords) then
 				self:say(obj.message, cid)
 				self.topic[cid] = self.topic[cid] + 1
 
@@ -168,7 +168,7 @@ function NpcHandler:handleTopics(cid, msg, topics)
 		return false
 	end
 
-	if not isInArray(topic.keywords, msg:lower()) then
+	if not string.msgInside(msg:lower(), topic.keywords) then
 		return false
 	end
 
