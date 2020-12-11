@@ -21,11 +21,6 @@
 	</attacks>
 	<defenses armor="2" defense="9" />
 	<elements>
-		<element physicalPercent="100" />
-		<element holyPercent="100" />
-		<element firePercent="100" />
-		<element energyPercent="100" />
-		<element icePercent="100" />
-		<element earthPercent="100" />
+		<element deathPercent="100" />
 	</elements>
 </monster>
