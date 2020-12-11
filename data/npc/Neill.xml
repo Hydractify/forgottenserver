@@ -4,5 +4,6 @@
 	<look type="268" head="115" body="22" legs="60" feet="78" />
 	<parameters>
 		<parameter key="message_greet" value="Hello, young initiate! Welcome to our {festival}! That's right! I said, your festival! We, residents of the Island of Destiny, have decided to put up a Festival of Initiates just for you newcomers! Isn't that great?" />
+		<parameter key="message_farewell" value="May your sword always be sharp." />
 	</parameters>
 </npc>

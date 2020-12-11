@@ -17,6 +17,18 @@ local voices = {
 }
 npcHandler:addModule(VoiceModule:new(voices))
 
+local function greetCallback(cid)
+	local player = Player(cid)
+
+	if player:getStorageValue(storage) > 0 then
+		npcHandler:say("Hello there! Having fun, I see. Just proceed to the other combat training tents or to a vocation trainer if you're certain about your destiny.")
+
+		return false
+	end
+
+	return true
+end
+
 local topics = {
 	[0] = {
 		keywords = {"yes", "festival"},
@@ -44,20 +56,32 @@ local topics = {
 		keywords = {"ready"},
 		message = "Good! You already fought on Rookgaard, so you probably have a weapon. Or do you need a {sword}?"
 	},
-	[4] = {
-		keywords = {"yes", "sword"},
-		message = {
-			"Here's a training sword. Some last hints - knights fight with a shield and weapon. Remember: we fight at the front, so we need good armor. We're tough, but we don't fight from a distance or heal others. Always have a health potion ready! ...",
-			"if you need a shield, take one from the box, left of the entrance. It will hold off two enemies at once. ...",
-			"Have fun and make your way through this tent, past the skeletons. The next tent's just north of this one. I hear they fight from a little distance in there. Huh. Well."
-		},
-		func = function(cid)
-			local player = Player(cid)
+	[4] = function(cid)
+		local player = Player(cid)
+
+		if isInArray({"yes", "sword"}) then
+			npcHandler:say({
+				"Here's a training sword. Some last hints - knights fight with a shield and weapon. Remember: we fight at the front, so we need good armor. We're tough, but we don't fight from a distance or heal others. Always have a health potion ready! ...",
+				"if you need a shield, take one from the box, left of the entrance. It will hold off two enemies at once. ...",
+				"Have fun and make your way through this tent, past the skeletons. The next tent's just north of this one. I hear they fight from a little distance in there. Huh. Well."
+			}, cid)
+
+			player:addItem(ItemType("mean knight sword"):getId())
+			player:setStorageValue(storage, 1)
+		end
+
+		if msgcontains(msg, "no") then
+			npcHandler:say({
+				"Good. Some last hints - knights fight with shield and weapon. Remember: we fight at the front, so we need good armor. We're tough, but we don't fight from a distance or heal others. Always have a health potion ready! ...",
+				"If you need a shield, take one from the box, left of the entrance. It will hold off two enemies at once. ...",
+				"Have fun and make your way through this tent, past the skeletons. The next tent's just north of this one. I hear they fight from a little distance in there. Huh. Well."
+			}, cid)
 
 			player:setStorageValue(storage, 1)
-			player:addItem(ItemType("mean knight sword"):getId())
 		end
-	}
+
+		return false
+	end
 }
 
 local function creatureSayCallback(cid, talkType, msg)
@@ -66,6 +90,10 @@ local function creatureSayCallback(cid, talkType, msg)
 	end
 
 	local topic = topics[npcHandler.topic[cid]]
+
+	if type(topic) == "function" then
+		return topic(cid)
+	end
 
 	if not isInArray(topic.keywords, msg:lower()) then
 		return false
