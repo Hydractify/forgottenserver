@@ -960,7 +960,8 @@ PlayerStorageKeys = {
 		quest = 13000,
 		shieldChest = 13001,
 		potionChest = 13002,
-		meatChest = 13003
+		meatChest = 13003,
+		spearChest = 13004
 	}
 }
 

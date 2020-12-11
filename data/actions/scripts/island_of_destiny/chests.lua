@@ -1,7 +1,8 @@
 local chests = {
 	[55000] = PlayerStorageKeys.ChildOfDestiny.shieldChest,
 	[55001] = PlayerStorageKeys.ChildOfDestiny.potionChest,
-	[55002] = PlayerStorageKeys.ChildOfDestiny.meatChest
+	[55002] = PlayerStorageKeys.ChildOfDestiny.meatChest,
+	[55003] = PlayerStorageKeys.ChildOfDestiny.spearChest
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
@@ -35,6 +36,10 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have found ' .. resultText .. '.')
 	player:setStorageValue(storage, 1)
+
+	if item.uid > 50002 then
+		addEvent(function(cid) Player(cid):setStorageValue(PlayerStorageKeys.ChildOfDestiny.spearChest, 0) end, 60 * 1000, player.uid)
+	end
 
 	return true
 end
