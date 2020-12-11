@@ -181,3 +181,10 @@ function NpcHandler:handleTopics(cid, msg, topics)
 
 	return true
 end
+function KeywordHandler:addBulkKeywords(keywordTable, npcHandler) 
+	for key,value in pairs(keywordTable) do
+		for index, word in pairs(value.keywords) do 
+			self:addKeyword(word ,StdModule.say, {npcHandler = npcHandler, text = value.text})
+		end
+	end
+end

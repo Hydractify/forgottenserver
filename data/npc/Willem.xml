@@ -2,4 +2,7 @@
 <npc name="Willem" script="Willem.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="129" />
+	<parameters>
+		<parameter key="message_greet" value=" Hi there! You don't have an {apple}, by any chance?" />
+	</parameters>
 </npc>
