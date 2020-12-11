@@ -1446,6 +1446,8 @@
 	<!-- Island of Destiny -->
 	<movevent event="StepIn" actionid="6000" script="destiny_island/tent.lua" />
 	<movevent event="StepIn" actionid="6001" script="destiny_island/preventParty.lua" />
+	<movevent event="StepIn" actionid="6002" script="destiny_island/congrats.lua" />
+	<movevent event="StepIn" actionid="6004" script="destiny_island/congrats.lua" />
 
 	<!-- Teleports -->
 	<movevent event="StepIn" fromaid="9700" toaid="9705" script="others/tpab.lua" />

@@ -21,13 +21,14 @@ local function greetCallback(cid)
 	local player = Player(cid)
 
 	if player:getStorageValue(storage) > 0 then
-		npcHandler:say("Hello there! Having fun, I see. Just proceed to the other combat training tents or to a vocation trainer if you're certain about your destiny.")
+		npcHandler:say("Hello there! Having fun, I see. Just proceed to the other combat training tents or to a vocation trainer if you're certain about your destiny.", cid)
 
 		return false
 	end
 
 	return true
 end
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 
 local topics = {
 	[0] = {
@@ -56,10 +57,10 @@ local topics = {
 		keywords = {"ready"},
 		message = "Good! You already fought on Rookgaard, so you probably have a weapon. Or do you need a {sword}?"
 	},
-	[4] = function(cid)
+	[4] = function(cid, msg)
 		local player = Player(cid)
 
-		if isInArray({"yes", "sword"}) then
+		if isInArray({"yes", "sword"}, msg:lower()) then
 			npcHandler:say({
 				"Here's a training sword. Some last hints - knights fight with a shield and weapon. Remember: we fight at the front, so we need good armor. We're tough, but we don't fight from a distance or heal others. Always have a health potion ready! ...",
 				"if you need a shield, take one from the box, left of the entrance. It will hold off two enemies at once. ...",
@@ -92,7 +93,7 @@ local function creatureSayCallback(cid, talkType, msg)
 	local topic = topics[npcHandler.topic[cid]]
 
 	if type(topic) == "function" then
-		return topic(cid)
+		return topic(cid, msg)
 	end
 
 	if not isInArray(topic.keywords, msg:lower()) then
@@ -103,7 +104,7 @@ local function creatureSayCallback(cid, talkType, msg)
 	npcHandler.topic[cid] = npcHandler.topic[cid] + 1
 
 	if type(topic.func) == "function" then
-		topic.func(cid)
+		topic.func(cid, msg)
 	end
 
 	return true

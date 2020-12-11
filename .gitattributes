@@ -3,6 +3,3 @@
 # Custom for Visual Studio
 *.sln     merge=union
 *.vcxproj merge=union
-
-# Let git-lfs manage the file since it's too large for GitHub
-data/world/map.otbm filter=lfs diff=lfs merge=lfs -text

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <npc name="Salbra" script="Salbra.lua" walkradius="0" floorchange="0">
 	<health now="100" max="100" />
-	<look type="148" />
+	<look type="148" head="95" body="66" legs="8" feet="130" />
+	<parameters>
+		<parameter key="message_greet" value="Welcome. Why don't you take a seat? You can't? Always in a hurry, hmm? But I have some things to teach you before you really get going - about runes and spells for sorcerers and druids. Are you {ready}?" />
+	</parameters>
 </npc>

@@ -961,7 +961,9 @@ PlayerStorageKeys = {
 		shieldChest = 13001,
 		potionChest = 13002,
 		meatChest = 13003,
-		spearChest = 13004
+		spearChest = 13004,
+		spellsUsed = 13005,
+		manaChest = 13006
 	}
 }
 

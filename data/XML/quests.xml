@@ -1335,10 +1335,11 @@
 		</mission>
 	</quest>
 	<quest name="Child of Destiny" startstorageid="13000" startstoragevalue="1">
-		<mission name="Child of Destiny" storageid="13000" startvalue="1" endvalue="11">
+		<mission name="Child of Destiny" storageid="13000" startvalue="1" endvalue="5">
 			<missionstate id="1" description="Talking to Neil, you learned that the festival of initiates will show you the different vocations' fighting styles in Tibia to help choose your own. Time to check them out!" />
 			<missionstate id="2" description="The sorcerer Tylius showed you how mages use a rod or wand as a weapon. In the next tent, you'll learn which weapons paladins use to hunt in Tibia. Onwards!"/>
 			<missionstate id="3" description="Shanoya showed you that paladins use ranged weapons like spears or a bow and arrows to fight in Tibia, and said that the next tent will be about magic runes and spells, interesting!"/>
+			<missionstate id="4" description="Now that you completed your festival tour, you can choose your vocation at a trainer in one of the houses north of the festival. Go choose your destiny!"/>
 		</mission>
 	</quest>
 </quests>
