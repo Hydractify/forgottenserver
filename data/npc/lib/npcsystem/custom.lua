@@ -153,6 +153,21 @@ function NpcHandler:handleTopics(cid, msg, topics)
 		return topic(cid, msg)
 	end
 
+	if topic[1] ~= nil then
+		for _, obj in pairs(topic) do
+			if isInArray(obj.keywords, msg:lower()) then
+				self:say(obj.message, cid)
+				self.topic[cid] = self.topic[cid] + 1
+
+				if type(obj.func) == "function" then
+					obj.func(cid, msg)
+				end
+			end
+		end
+
+		return false
+	end
+
 	if not isInArray(topic.keywords, msg:lower()) then
 		return false
 	end
