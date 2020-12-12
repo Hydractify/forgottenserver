@@ -52,24 +52,21 @@ local topics = {
 			player:setStorageValue(spellStorage, 1)
 
 			npcHandler:releaseFocus(cid)
-
-			return false
 		end
 	},
-	[2] = function(cid, msg)
-		if msgcontains(msg, "proceed") then
-			npcHandler:say("Very well, now we we'll talk about attack runes, this will be fun! Are you {ready}?", cid)
-			npcHandler.topic[cid] = npcHandler.topic[cid] + 1
-		end
-
-		if msgcontains(msg, "again") then
-			npcHandler:say("Your new spell can be cast anytime by saying 'exevo dis flam hur'. Go and test it on the monsters over there, then come back!", cid)
-
-			npcHandler:releaseFocus(cid)
-		end
-
-		return false
-	end,
+	[2] = {
+		{
+			keywords = {"proceed"},
+			message = "Very well, now we we'll talk about attack runes, this will be fun! Are you {ready}?"
+		},
+		{
+			keywords = {"again"},
+			message = "Your new spell can be cast anytime by saying 'exevo dis flam hur'. Go and test it on the monsters over there, then come back!",
+			func = function(cid, msg)
+				npcHandler:releaseFocus(cid)
+			end
+		}
+	},
 	[3] = {
 		keywords = {"yes", "ready"},
 		message = {
@@ -83,27 +80,24 @@ local topics = {
 			player:setStorageValue(spellStorage, 2)
 
 			npcHandler:releaseFocus(cid)
-
-			return false
 		end
 	},
-	[4] = function(cid, msg)
-		if msgcontains(msg, "proceed") then
-			npcHandler:say("Of course! I will now tell you something about healing yourself. Are you {ready}?", cid)
-			npcHandler.topic[cid] = npcHandler.topic[cid] + 1
-		end
-
-		if msgcontains(msg, "again") then
-			npcHandler:say({
+	[4] = {
+		{
+			keywords = {"proceed"},
+			message = "Of course! I will now tell you something about healing yourself. Are you {ready}?"
+		},
+		{
+			keywords = {"again"},
+			message = {
 				"Using attack runes is simple: just right-click on the rune. If it's a rune that needs a target like a missile or healing rune, you need to click on the target on the map or battle list afterwards. Other runes need no target. ...",
 				"Just walk to the counter and see if you can hit the monster from there."
-			}, cid)
-
-			npcHandler:releaseFocus(cid)
-		end
-
-		return false
-	end,
+			},
+			func = function(cid, msg)
+				npcHandler:releaseFocus(cid)
+			end
+		}
+	},
 	[5] = {
 		keywords = {"yes", "ready"},
 		message = "That's easy, you have just learned 'exura dis', an easy healing spell. Now, type in the spell's magic words, 'exura dis', in your chatbar, {OK}?",
@@ -111,8 +105,6 @@ local topics = {
 			local player = Player(cid)
 
 			player:learnSpell("exura dis")
-
-			return false
 		end
 	},
 	[6] = {
@@ -136,8 +128,6 @@ local topics = {
 			player:setStorageValue(questStorage, 4)
 
 			npcHandler:releaseFocus(cid)
-
-			return false
 		end
 	}
 }

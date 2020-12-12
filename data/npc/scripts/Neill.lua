@@ -57,32 +57,35 @@ local topics = {
 		keywords = {"ready"},
 		message = "Good! You already fought on Rookgaard, so you probably have a weapon. Or do you need a {sword}?"
 	},
-	[4] = function(cid, msg)
-		local player = Player(cid)
-
-		if isInArray({"yes", "sword"}, msg:lower()) then
-			npcHandler:say({
+	[4] = {
+		{
+			keywords = {"yes", "sword"},
+			message = {
 				"Here's a training sword. Some last hints - knights fight with a shield and weapon. Remember: we fight at the front, so we need good armor. We're tough, but we don't fight from a distance or heal others. Always have a health potion ready! ...",
 				"if you need a shield, take one from the box, left of the entrance. It will hold off two enemies at once. ...",
 				"Have fun and make your way through this tent, past the skeletons. The next tent's just north of this one. I hear they fight from a little distance in there. Huh. Well."
-			}, cid)
+			},
+			func = function(cid, msg)
+				local player = Player(cid)
 
-			player:addItem(ItemType("mean knight sword"):getId())
-			player:setStorageValue(storage, 1)
-		end
-
-		if msgcontains(msg, "no") then
-			npcHandler:say({
+				player:addItem(ItemType("mean knight sword"):getId())
+				player:setStorageValue(storage, 1)
+			end
+		},
+		{
+			keywords = {"no"},
+			message = {
 				"Good. Some last hints - knights fight with shield and weapon. Remember: we fight at the front, so we need good armor. We're tough, but we don't fight from a distance or heal others. Always have a health potion ready! ...",
 				"If you need a shield, take one from the box, left of the entrance. It will hold off two enemies at once. ...",
 				"Have fun and make your way through this tent, past the skeletons. The next tent's just north of this one. I hear they fight from a little distance in there. Huh. Well."
-			}, cid)
+			},
+			func = function(cid, msg)
+				local player = Player(cid)
 
-			player:setStorageValue(storage, 1)
-		end
-
-		return false
-	end
+				player:setStorageValue(storage, 1)
+			end
+		}
+	}
 }
 
 local function creatureSayCallback(cid, talkType, msg)
