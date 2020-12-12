@@ -146,16 +146,6 @@ function StdModule.rookgaardHints(cid, message, keywords, parameters, node)
 	return true
 end
 
-<<<<<<< HEAD
-=======
-function KeywordHandler:addBulkKeywords(keywordTable, npcHandler) 
-	for key,value in pairs(keywordTable) do
-		for index, word in pairs(value.keywords) do 
-			self:addKeyword(word ,StdModule.say, {npcHandler = npcHandler, text = value.text})
-		end
-	end
-end
->>>>>>> feat: Willem keywords (topics not done yet) and a little tyding up on the addBulkKeywords function
 function NpcHandler:handleTopics(cid, msg, topics)
 	local topic = topics[self.topic[cid]]
 
@@ -191,6 +181,7 @@ function NpcHandler:handleTopics(cid, msg, topics)
 
 	return true
 end
+
 function KeywordHandler:addBulkKeywords(keywordTable, npcHandler) 
 	for key,value in pairs(keywordTable) do
 		for index, word in pairs(value.keywords) do 
