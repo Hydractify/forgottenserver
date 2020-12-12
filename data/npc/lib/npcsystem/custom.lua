@@ -103,6 +103,17 @@ end
 
 --[[ NpcHandler extensions ]]
 
+-- Custom minified version of NpcHandler:say (basically it without any delays)
+function NpcHandler:customSay(message, cid)
+	if type(message) == "table" then
+		for i = 1, #message do
+			selfSay(message[i], cid, false)
+		end
+	else
+		selfSay(message, cid, false)
+	end
+end
+
 -- Handles npc topics based on a table
 function NpcHandler:handleTopics(cid, msg, topics)
 	local topic = topics[self.topic[cid]]
@@ -111,37 +122,42 @@ function NpcHandler:handleTopics(cid, msg, topics)
 		return topic(cid, msg)
 	end
 
-	if topic[1] ~= nil then
+	local function sendMessage(obj)
+		self:customSay(obj.message, cid)
+
+		if type(obj.func) == "function" then
+			obj.func(cid, msg)
+		end
+
+		if self.topic[cid] ~= nil then
+			self.topic[cid] = self.topic[cid] + 1
+		end
+	end
+
+	if type(topic[1]) == "table" then
 		for _, obj in pairs(topic) do
 			if string.msgInside(msg:lower(), obj.keywords) then
-				self:say(obj.message, cid)
-				self.topic[cid] = self.topic[cid] + 1
-
-				if type(obj.func) == "function" then
-					obj.func(cid, msg)
+				if type(obj.filter) == "function" then
+					if obj.filter(cid, msg) then
+						sendMessage(obj)
+					end
+				else
+					sendMessage(obj)
 				end
+
+				break
 			end
 		end
-
-		return false
-	end
-
-	if not string.msgInside(msg:lower(), topic.keywords) then
-		return false
-	end
-
-	if type(topic.message) == "table" then
-		for i = 1, #topic.message do
-			selfSay(topic.message[i], cid)
-		end
 	else
-		selfSay(topic.message, cid)
-	end
+		if not string.msgInside(msg:lower(), topic.keywords) then
+			return false
+		end
 
-	self.topic[cid] = self.topic[cid] + 1
+		if type(topic.filter) == "function" and not topic.filter(cid, msg) then
+			return false
+		end
 
-	if type(topic.func) == "function" then
-		topic.func(cid, msg)
+		sendMessage(topic)
 	end
 
 	return true
