@@ -92,6 +92,61 @@ function KeywordHandler:addSpellKeyword(keys, parameters)
 	spellKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'Maybe next time.', reset = true})
 end
 
+-- Adds multiple keywords at once using a table
+function KeywordHandler:addBulkKeywords(keywordTable, npcHandler)
+	for key,value in pairs(keywordTable) do
+		for index, word in pairs(value.keywords) do
+			self:addKeyword(word ,StdModule.say, {npcHandler = npcHandler, text = value.text})
+		end
+	end
+end
+
+--[[ NpcHandler extensions ]]
+
+-- Handles npc topics based on a table
+function NpcHandler:handleTopics(cid, msg, topics)
+	local topic = topics[self.topic[cid]]
+
+	if type(topic) == "function" then
+		return topic(cid, msg)
+	end
+
+	if topic[1] ~= nil then
+		for _, obj in pairs(topic) do
+			if string.msgInside(msg:lower(), obj.keywords) then
+				self:say(obj.message, cid)
+				self.topic[cid] = self.topic[cid] + 1
+
+				if type(obj.func) == "function" then
+					obj.func(cid, msg)
+				end
+			end
+		end
+
+		return false
+	end
+
+	if not string.msgInside(msg:lower(), topic.keywords) then
+		return false
+	end
+
+	if type(topic.message) == "table" then
+		for i = 1, #topic.message do
+			selfSay(topic.message[i], cid)
+		end
+	else
+		selfSay(topic.message, cid)
+	end
+
+	self.topic[cid] = self.topic[cid] + 1
+
+	if type(topic.func) == "function" then
+		topic.func(cid, msg)
+	end
+
+	return true
+end
+
 local hints = {
 	[-1] = "If you don't know the meaning of an icon on the right side, move the mouse cursor on it and wait a moment.",
 	[0] = "Send private messages to other players by right-clicking on the player or the player's name and select 'Message to ....'. You can also open a 'private message channel' and type in the name of the player.",
@@ -144,48 +199,4 @@ function StdModule.rookgaardHints(cid, message, keywords, parameters, node)
 		player:setStorageValue(PlayerStorageKeys.RookgaardHints, hintId + 1)
 	end
 	return true
-end
-
-function NpcHandler:handleTopics(cid, msg, topics)
-	local topic = topics[self.topic[cid]]
-
-	if type(topic) == "function" then
-		return topic(cid, msg)
-	end
-
-	if topic[1] ~= nil then
-		for _, obj in pairs(topic) do
-			if string.msgInside(msg:lower(), obj.keywords) then
-				self:say(obj.message, cid)
-				self.topic[cid] = self.topic[cid] + 1
-
-				if type(obj.func) == "function" then
-					obj.func(cid, msg)
-				end
-			end
-		end
-
-		return false
-	end
-
-	if not string.msgInside(msg:lower(), topic.keywords) then
-		return false
-	end
-
-	self:say(topic.message, cid)
-	self.topic[cid] = self.topic[cid] + 1
-
-	if type(topic.func) == "function" then
-		topic.func(cid, msg)
-	end
-
-	return true
-end
-
-function KeywordHandler:addBulkKeywords(keywordTable, npcHandler) 
-	for key,value in pairs(keywordTable) do
-		for index, word in pairs(value.keywords) do 
-			self:addKeyword(word ,StdModule.say, {npcHandler = npcHandler, text = value.text})
-		end
-	end
 end
