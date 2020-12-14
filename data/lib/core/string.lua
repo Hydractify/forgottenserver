@@ -19,11 +19,13 @@ string.titleCase = function(str)
 end
 
 string.msgInside = function(msg, arr)
-	local splitStr = string.split(msg, "%p?%s%p?")
+	local splitStr = string.split(msg, "%s*%p?%s%p?%s*")
 
 	for _, split in pairs(splitStr) do
-		if table.contains(arr, split:lower()) then
-			return true
+		for _, keyword in pairs(arr) do
+			if string.match(split, keyword) then
+				return true
+			end
 		end
 
 		return false

@@ -963,7 +963,14 @@ PlayerStorageKeys = {
 		meatChest = 13003,
 		spearChest = 13004,
 		spellsUsed = 13005,
-		manaChest = 13006
+		manaChest = 13006,
+		sorcerer = {
+			wand = 13007,
+			spellbook = 13008,
+			hat = 13009,
+			robe = 13010,
+			potion = 13011
+		}
 	}
 }
 

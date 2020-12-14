@@ -3,7 +3,12 @@ local chests = {
 	[55001] = PlayerStorageKeys.ChildOfDestiny.potionChest,
 	[55002] = PlayerStorageKeys.ChildOfDestiny.meatChest,
 	[55003] = PlayerStorageKeys.ChildOfDestiny.spearChest,
-	[55004] = PlayerStorageKeys.ChildOfDestiny.manaChest
+	[55004] = PlayerStorageKeys.ChildOfDestiny.manaChest,
+	[50006] = PlayerStorageKeys.ChildOfDestiny.sorcerer.wand,
+	[50007] = PlayerStorageKeys.ChildOfDestiny.sorcerer.spellbook,
+	[50008] = PlayerStorageKeys.ChildOfDestiny.sorcerer.hat,
+	[50009] = PlayerStorageKeys.ChildOfDestiny.sorcerer.robe,
+	[50010] = PlayerStorageKeys.ChildOfDestiny.sorcerer.potion,
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)

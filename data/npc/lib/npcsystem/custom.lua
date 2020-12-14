@@ -105,12 +105,14 @@ end
 
 -- Custom minified version of NpcHandler:say (basically it without any delays)
 function NpcHandler:customSay(message, cid)
+	local player = Player(cid)
+
 	if type(message) == "table" then
 		for i = 1, #message do
-			selfSay(message[i], cid, false)
+			selfSay(self:parseMessage(message[i], { [TAG_PLAYERNAME] = player:getName() }), cid, false)
 		end
 	else
-		selfSay(message, cid, false)
+		selfSay(self:parseMessage(message, { [TAG_PLAYERNAME] = player:getName() }), cid, false)
 	end
 end
 
