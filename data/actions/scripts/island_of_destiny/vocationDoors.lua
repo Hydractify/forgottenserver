@@ -6,7 +6,8 @@ local Vocations = {
 }
 
 local doors = {
-	[55005] = Vocations.SORCERER
+	[55005] = Vocations.SORCERER,
+	[55011] = Vocations.DRUID
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)

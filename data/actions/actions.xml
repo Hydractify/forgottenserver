@@ -252,6 +252,7 @@
 	<!-- Island of Destiny -->
 	<action actionid="6003" script="island_of_destiny/chests.lua" />
 	<action uniqueid="55005" script="island_of_destiny/vocationDoors.lua" />
+	<action uniqueid="55011" script="island_of_destiny/vocationDoors.lua" />
 
 	<!-- Adventurer's Guild -->
 	<action itemid="18559" script="adventurers guild/adventurers_stone.lua" />

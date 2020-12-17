@@ -93,10 +93,12 @@ function KeywordHandler:addSpellKeyword(keys, parameters)
 end
 
 -- Adds multiple keywords at once using a table
-function KeywordHandler:addBulkKeywords(keywordTable, npcHandler)
-	for key,value in pairs(keywordTable) do
-		for index, word in pairs(value.keywords) do
-			self:addKeyword(word ,StdModule.say, {npcHandler = npcHandler, text = value.text})
+function KeywordHandler:addBulkKeywords(moduleFunc, keywordTable, npcHandler)
+	for _, parameters in pairs(keywordTable) do
+		for _, keyword in pairs(parameters.keywords) do
+			parameters.npcHandler = npcHandler
+
+			self:addKeyword(keyword, moduleFunc, parameters)
 		end
 	end
 end

@@ -9,8 +9,7 @@ function onThink()                          npcHandler:onThink()                
 
 local Routes = {
 	MAIN = 0,
-	INFO = 1,
-	SORCERER = 2
+	INFO = 1
 }
 local route = {}
 
@@ -52,9 +51,9 @@ local mainRoute = {
 				"The captain on the ship to the north will bring you to a city of your choice when you are prepared. Farewell, young sourcerer, and don't hesitate to ask me if you have any questions."
 			},
 			func = function(cid, msg)
-				local player = Player(cid)
+				Player(cid):setVocation(1)
 
-				player:setVocation(1)
+				npcHandler:releaseFocus(cid)
 			end
 		},
 		{

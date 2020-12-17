@@ -970,6 +970,13 @@ PlayerStorageKeys = {
 			hat = 13009,
 			robe = 13010,
 			potion = 13011
+		},
+		druid = {
+			wand = 13012,
+			spellbook = 13013,
+			hat = 13014,
+			robe = 13015,
+			potion = 13016
 		}
 	}
 }
