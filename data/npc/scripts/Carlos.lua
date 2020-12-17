@@ -94,7 +94,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-	if isInArray({"yes", "help", "ok"}, msg) then
+	if isInArray({"yes", "help", "ok", "outfit"}, msg) then
 		if storeTalkCid[cid] == 1 then
 			npcHandler:say("Very well. Just choose an outfit and a colour combination that suits you. You can open this dialogue anytime by right-clicking on yourself and selecting 'Set Outfit'. Just try it and then talk to me again!", cid)
 			player:setStorageValue(PlayerStorageKeys.RookgaardTutorialIsland.CarlosNpcGreetStorage, 2)
@@ -139,17 +139,6 @@ local function creatureSayCallback(cid, type, msg)
 			player:setStorageValue(PlayerStorageKeys.RookgaardTutorialIsland.CarlosNpcGreetStorage, 8)
 			npcHandler:releaseFocus(cid)
 			npcHandler:resetNpc(cid)
-		end
-	elseif msgcontains(msg, "outfit") then
-		if storeTalkCid[cid] == 1 then
-			npcHandler:say({
-				"Well, that's how trading with NPCs like me works. I think you are ready now to cross the bridge to Rookgaard, just follow the path to the northwest. Good luck, " .. player:getName() .. "! ...",
-				"And by the way: if you thought all of this was boring and you'd rather skip the tutorial with your next character, just say 'skip tutorial' to Santiago. ...",
-				"Then you'll miss out on those nice items and experience though. Hehehe! It's your choice. Well, take care for now!"
-			}, cid)
-			player:setStorageValue(PlayerStorageKeys.RookgaardTutorialIsland.CarlosQuestLog, 7)
-			player:setStorageValue(PlayerStorageKeys.RookgaardTutorialIsland.CarlosNpcGreetStorage, 8)
-			addEvent(releasePlayer, 1000, cid)
 		end
 	elseif msgcontains(msg, "trade") then
 		if storeTalkCid[cid] == 6 then
