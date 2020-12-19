@@ -126,3 +126,6 @@ ownerName = ""
 ownerEmail = ""
 url = "https://otland.net/"
 location = "Sweden"
+
+-- Notifications
+discordWebhookURL = "https://discord.com/api/webhooks/:id/:token?wait=true"
