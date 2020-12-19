@@ -78,6 +78,7 @@ class ConfigManager
 			MYSQL_SOCK,
 			DEFAULT_PRIORITY,
 			MAP_AUTHOR,
+			DISCORD_WEBHOOK_URL,
 
 			LAST_STRING_CONFIG /* this must be the last one */
 		};

@@ -42,6 +42,7 @@ This server has been tested/used in [Linux], we cannot guarantee it will work in
 ### Compiling
 
 The steps to compile the server can be found here: https://github.com/otland/forgottenserver/wiki/Compiling
+Additionally you need libcurl and libjsoncpp.
 
 ### MySQL
 

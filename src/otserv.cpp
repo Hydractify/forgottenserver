@@ -39,6 +39,7 @@
 #if __has_include("gitmetadata.h")
 	#include "gitmetadata.h"
 #endif
+#include "webhook.h"
 
 DatabaseTasks g_databaseTasks;
 Dispatcher g_dispatcher;
@@ -86,6 +87,9 @@ int main(int argc, char* argv[])
 	g_loaderSignal.wait(g_loaderUniqueLock);
 
 	if (serviceManager.is_running()) {
+		webhook_init();
+		webhook_send_message("Server is now online", "Server has sucessfuly started.", 0x00FF00);
+
 		std::cout << ">> " << g_config.getString(ConfigManager::SERVER_NAME) << " Server Online!" << std::endl << std::endl;
 		serviceManager.run();
 	} else {
