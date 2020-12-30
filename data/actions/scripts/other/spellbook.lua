@@ -1,16 +1,19 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	local count = getPlayerInstantSpellCount(player)
 	local text = ""
 	local t = {}
-	for i = 0, count - 1 do
-		local spell = getPlayerInstantSpellInfo(player, i)
+
+	local spells = player:getInstantSpells()
+
+	for _, spell in pairs(spells) do
 		if spell.level ~= 0 then
 			if spell.manapercent > 0 then
 				spell.mana = spell.manapercent .. "%"
 			end
+
 			t[#t + 1] = spell
 		end
 	end
+
 	table.sort(t, function(a, b) return a.level < b.level end)
 	local prevLevel = -1
 	local spell
