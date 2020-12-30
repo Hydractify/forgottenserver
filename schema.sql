@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `secret` char(16) DEFAULT NULL,
   `type` int(11) NOT NULL DEFAULT '1',
   `premium_ends_at` int(11) unsigned NOT NULL DEFAULT '0',
-  `discord_id` bigint(20) NOT NULL DEFAULT '',
+  `discord_id` bigint(20) NOT NULL,
   `creation_date` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
